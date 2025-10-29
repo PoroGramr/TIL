@@ -10,3 +10,9 @@ JVM의 힙 메모리는 여러 영역으로 나뉘며, 각 영역은 객체의 �
 
 - **Old Generation(또는 Tenured Generation)**: Young Generation에서 살아남은 객체가 이동하는 영역입니다. 이 영역의 객체는 상대적으로 오래 지속되며, GC가 덜 빈번하게 실행됩니다.
 
+### Young Generation의 GC
+Young Generation에서는 주로 Minor GC가 발생합니다. Minor GC는 Eden 영역과 Survivor 영역에서 더 이상 참조되지 않는 객체를 식별하고 제거합니다. 살아남은 객체는 Survivor 영역으로 이동하며, 일정 횟수 이상 생존한 객체는 Old Generation으로 이동합니다.
+
+### Old Generation의 GC
+Old Generation에서는 Major GC 또는 Full GC가 발생합니다. 이 GC는 Old Generation에 있는 객체를 대상으로 하며, 메모리 회수를 위해 더 많은 시간을 소요할 수 있습니다. Major GC는 애플리케이션의 성능에 영향을 미칠 수 있으므로, 주의해서 관리해야 합니다.
+
