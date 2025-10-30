@@ -16,3 +16,11 @@ Young Generation에서는 주로 Minor GC가 발생합니다. Minor GC는 Eden �
 ### Old Generation의 GC
 Old Generation에서는 Major GC 또는 Full GC가 발생합니다. 이 GC는 Old Generation에 있는 객체를 대상으로 하며, 메모리 회수를 위해 더 많은 시간을 소요할 수 있습니다. Major GC는 애플리케이션의 성능에 영향을 미칠 수 있으므로, 주의해서 관리해야 합니다.
 
+
+## 가비지 컬렉션 알고리즘
+
+JVM은 다양한 가비지 컬렉션 알고리즘을 제공합니다. 주요 알고리즘은 다음과 같습니다:
+- **Mark-and-Sweep**: 이 알고리즘은 먼저 모든 객체를 탐색하여 살아있는 객체를 표시(Mark)한 후, 표시되지 않은 객체를 제거(Sweep)합니다. 이 방법은 단순하지만, 메모리 단편화가 발생할 수 있습니다.
+- **Generational Garbage Collection**: 이 알고리즘은 객체의 생애 주기에 따라 메모리를 관리합니다. Young Generation과 Old Generation으로 나누어, Young Generation에서 자주 발생하는 GC를 통해 빠르게 메모리를 회수하고, Old Generation에서는 덜 빈번한 GC를 수행합니다.
+- **G1 (Garbage-First) Collector**: G1은 대규모 힙 메모리를 효율적으로 관리하기 위해 설계된 알고리즘입니다. G1은 힙을 여러 개의 작은 영역(Region)으로 나누고, 각 영역을 독립적으로 관리합니다. G1은 짧은 일시 중단 시간을 목표로    하며, 애플리케이션의 응답성을 향상시킵니다. 
+
