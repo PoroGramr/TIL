@@ -24,3 +24,7 @@ JVM은 다양한 가비지 컬렉션 알고리즘을 제공합니다. 주요 알
 - **Generational Garbage Collection**: 이 알고리즘은 객체의 생애 주기에 따라 메모리를 관리합니다. Young Generation과 Old Generation으로 나누어, Young Generation에서 자주 발생하는 GC를 통해 빠르게 메모리를 회수하고, Old Generation에서는 덜 빈번한 GC를 수행합니다.
 - **G1 (Garbage-First) Collector**: G1은 대규모 힙 메모리를 효율적으로 관리하기 위해 설계된 알고리즘입니다. G1은 힙을 여러 개의 작은 영역(Region)으로 나누고, 각 영역을 독립적으로 관리합니다. G1은 짧은 일시 중단 시간을 목표로    하며, 애플리케이션의 응답성을 향상시킵니다. 
 
+
+## 튜닝 및 모니터링
+JVM의 가비지 컬렉션 성능을 최적화하기 위해 다양한 튜닝 옵션과 모니터링 도구를 사용할 수 있습니다. 예를 들어, 힙 크기 설정, GC 알고리즘 선택, GC 로그 분석 등을 통해 애플리케이션의 메모리 사용 패턴에 맞게 조정할 수 있습니다. 또한, VisualVM, JConsole, Java Mission Control과 같은 도구를 사용하여 GC 활동을 모니터링하고 성능 병목 현상을 식별할 수 있습니다.
+
